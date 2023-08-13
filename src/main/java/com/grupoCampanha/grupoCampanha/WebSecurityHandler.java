@@ -14,7 +14,7 @@ public class WebSecurityHandler {
         http
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/", "/home").permitAll()
-                        .requestMatchers("/bootstrap/css/sign.css").permitAll()
+                        .requestMatchers("/bootstrap/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
